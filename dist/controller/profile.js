@@ -104,10 +104,10 @@ module.exports = {
         }
     }),
     signin: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+        console.log("i am inside signin", req.body);
         try {
             const Email = req.body.email;
             const Password = req.body.password;
-            const isWorker = req.body.isWorker;
             const user = yield login.findOne({
                 Email: Email,
             });

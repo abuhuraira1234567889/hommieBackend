@@ -94,10 +94,11 @@ module.exports = {
     }
   },
   signin: async (req: any, res: any) => {
+    console.log("i am inside signin", req.body)
     try {
       const Email = req.body.email;
       const Password = req.body.password;
-      const isWorker = req.body.isWorker;
+      
       const user = await login.findOne({
         Email: Email,
       });
