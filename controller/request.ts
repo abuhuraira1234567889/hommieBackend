@@ -2,7 +2,7 @@ import express, { Express, Request, Response } from "express";
 const nodemailer = require("nodemailer");
 const mongoose = require("mongoose");
 
-const complain = mongoose.model("Complain");
+
 const RequestModal = mongoose.model("Request");
 const login = mongoose.model("login");
 const client = mongoose.model("Client");
@@ -50,7 +50,9 @@ module.exports = {
         };
         transporter.sendMail(mailOptions, (error: any, info: any) => {
           if (error) {
+            next()
             return console.log(error);
+
           }
           console.log("Message sent: %s", info.messageId);
 
@@ -64,6 +66,7 @@ module.exports = {
         };
         transporter.sendMail(mailOptions2, (error: any, info: any) => {
           if (error) {
+            next()
             return console.log(error);
           }
           console.log("Message sent: %s", info.messageId);
@@ -159,6 +162,7 @@ module.exports = {
       };
       transporter.sendMail(mailOptions, (error: any, info: any) => {
         if (error) {
+          next()
           return console.log(error);
         }
         console.log("Message sent: %s", info.messageId);

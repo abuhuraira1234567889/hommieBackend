@@ -11,7 +11,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const nodemailer = require("nodemailer");
 const mongoose = require("mongoose");
-const complain = mongoose.model("Complain");
 const RequestModal = mongoose.model("Request");
 const login = mongoose.model("login");
 const client = mongoose.model("Client");
@@ -58,6 +57,7 @@ module.exports = {
                 };
                 transporter.sendMail(mailOptions, (error, info) => {
                     if (error) {
+                        next();
                         return console.log(error);
                     }
                     console.log("Message sent: %s", info.messageId);
@@ -71,6 +71,7 @@ module.exports = {
                 };
                 transporter.sendMail(mailOptions2, (error, info) => {
                     if (error) {
+                        next();
                         return console.log(error);
                     }
                     console.log("Message sent: %s", info.messageId);
@@ -158,6 +159,7 @@ module.exports = {
             };
             transporter.sendMail(mailOptions, (error, info) => {
                 if (error) {
+                    next();
                     return console.log(error);
                 }
                 console.log("Message sent: %s", info.messageId);

@@ -60,7 +60,7 @@ module.exports = {
             let mailOptions = {
                 from: "hurairaabu098@gmail.com",
                 to: clientExist.Email,
-                subject: "Client Addees",
+                subject: "Worker added",
                 text: "Hello,You are added in our databases please wait for a client to rech out you", // plain text body
             };
             transporter.sendMail(mailOptions, (error, info) => {
@@ -70,6 +70,7 @@ module.exports = {
                 console.log("Message sent: %s", info.messageId);
                 next();
             });
+            // we sent respone to show dats on front end
             return res.status(200).json({ data: newClient });
         }
         catch (err) {
@@ -135,30 +136,28 @@ module.exports = {
                 return res.status(200).json({ data: Client });
             }
             else {
-                return res.status(201).json({ message: "Property not found" });
+                return res.status(201).json({ message: "worker not found" });
             }
         }
         catch (error) {
             res.status(500).json(error);
         }
     }),
-    checkClient: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-        const id = req.params.id;
-        try {
-            const clientExist = yield client.findOne({
-                userId: id,
-            });
-            if (clientExist) {
-                return res.status(200).json({ data: clientExist });
-            }
-            else {
-                return res.status(201).json({ message: "Client not found" });
-            }
-        }
-        catch (error) {
-            res.status(500).json(error);
-        }
-    }),
+    // checkClient: async (req: any, res: any) => {
+    //   const id = req.params.id;
+    //   try {
+    //     const clientExist = await client.findOne({
+    //       userId: id,
+    //     });
+    //     if (clientExist) {
+    //       return res.status(200).json({ data: clientExist });
+    //     } else {
+    //       return res.status(201).json({ message: "Client not found" });
+    //     }
+    //   } catch (error: any) {
+    //     res.status(500).json(error);
+    //   }
+    // },
     removeClient: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         try {
             const id = req.params.id;

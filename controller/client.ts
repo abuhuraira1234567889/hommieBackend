@@ -74,7 +74,7 @@ module.exports = {
       let mailOptions = {
         from: "hurairaabu098@gmail.com",
         to: clientExist.Email,
-        subject: "Client Addees",
+        subject: "Worker added",
         text: "Hello,You are added in our databases please wait for a client to rech out you", // plain text body
       };
       transporter.sendMail(mailOptions, (error: any, info: any) => {
@@ -85,6 +85,7 @@ module.exports = {
 
         next();
       });
+      // we sent respone to show dats on front end
       return res.status(200).json({ data: newClient });
     } catch (err) {
       return res.status(400).json({ error: err });
@@ -175,28 +176,28 @@ module.exports = {
       if (Client) {
         return res.status(200).json({ data: Client });
       } else {
-        return res.status(201).json({ message: "Property not found" });
+        return res.status(201).json({ message: "worker not found" });
       }
     } catch (error: any) {
       res.status(500).json(error);
     }
   },
 
-  checkClient: async (req: any, res: any) => {
-    const id = req.params.id;
-    try {
-      const clientExist = await client.findOne({
-        userId: id,
-      });
-      if (clientExist) {
-        return res.status(200).json({ data: clientExist });
-      } else {
-        return res.status(201).json({ message: "Client not found" });
-      }
-    } catch (error: any) {
-      res.status(500).json(error);
-    }
-  },
+  // checkClient: async (req: any, res: any) => {
+  //   const id = req.params.id;
+  //   try {
+  //     const clientExist = await client.findOne({
+  //       userId: id,
+  //     });
+  //     if (clientExist) {
+  //       return res.status(200).json({ data: clientExist });
+  //     } else {
+  //       return res.status(201).json({ message: "Client not found" });
+  //     }
+  //   } catch (error: any) {
+  //     res.status(500).json(error);
+  //   }
+  // },
   removeClient: async (req: any, res: any) => {
     try {
       const id = req.params.id;

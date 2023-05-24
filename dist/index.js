@@ -20,11 +20,9 @@ app.all("/*", function (req, res, next) {
     next();
 });
 require("./src/modals/login");
-require("./src/modals/complain");
 require("./src/modals/request");
 require("./src/modals/client");
 require("./routes/client")(app);
-require("./routes/complain")(app);
 require("./routes/profile")(app);
 require("./routes/request")(app);
 mongoose.connect(DB);
