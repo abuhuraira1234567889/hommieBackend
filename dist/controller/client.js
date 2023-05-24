@@ -22,8 +22,8 @@ const transporter = nodemailer.createTransport({
     service: "gmail",
     port: 587,
     auth: {
-        user: "hurairaabu098@gmail.com",
-        pass: "sutdvvzwxphdyfut",
+        user: "hommieservices@gmail.com",
+        pass: "ysitjpspnfjaydgw",
     },
 });
 module.exports = {
@@ -58,7 +58,7 @@ module.exports = {
             });
             newClient.save();
             let mailOptions = {
-                from: "hurairaabu098@gmail.com",
+                from: "hommieservices@gmail.com",
                 to: clientExist.Email,
                 subject: "Worker added",
                 text: "Hello,You are added in our databases please wait for a client to rech out you", // plain text body
@@ -108,7 +108,7 @@ module.exports = {
                 });
                 console.log(clientExist.Email);
                 let mailOptions = {
-                    from: "hurairaabu098@gmail.com",
+                    from: "hommieservices@gmail.com",
                     to: clientExist.Email,
                     subject: "Profile Updated",
                     text: "Your Profile is updated successfully", // plain text body

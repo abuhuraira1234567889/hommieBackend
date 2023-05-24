@@ -10,8 +10,8 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   port: 587,
   auth: {
-    user: "hurairaabu098@gmail.com",
-    pass: "sutdvvzwxphdyfut",
+    user: "hommieservices@gmail.com",
+    pass: "ysitjpspnfjaydgw",
   },
 });
 

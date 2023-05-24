@@ -11,8 +11,8 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   port: 587,
   auth: {
-    user: "hurairaabu098@gmail.com",
-    pass: "sutdvvzwxphdyfut",
+    user: "hommieservices@gmail.com",
+    pass: "ysitjpspnfjaydgw",
   },
 });
 
@@ -43,7 +43,7 @@ module.exports = {
         });
         console.log(userEmail.Email);
         let mailOptions = {
-          from: "hurairaabu098@gmail.com",
+          from: "hommieservices@gmail.com",
           to: clientEmail.Email,
           subject: "Request for Approval",
           text: `Hy sir, I am ${userEmail.Name}. I want you to work for me. please approve my request`, // plain text body
@@ -59,7 +59,7 @@ module.exports = {
           next();
         });
         let mailOptions2 = {
-          from: "hurairaabu098@gmail.com",
+          from: "hommieservices@gmail.com",
           to: userEmail.Email,
           subject: "Request for Approval",
           text: `Your request Sent to the Admin Please wait for the approval`, // plain text body
@@ -97,7 +97,7 @@ module.exports = {
       });
       console.log(userEmail.Email);
       let mailOptions = {
-        from: "hurairaabu098@gmail.com",
+        from: "hommieservices@gmail.com",
         to: userEmail.Email,
         subject: "Request Approved",
         text: `Your request is approved by the Admin`, // plain text body
@@ -155,7 +155,7 @@ module.exports = {
       });
       console.log(userEmail.Email);
       let mailOptions = {
-        from: "hurairaabu098@gmail.com",
+        from: "hommieservices@gmail.com",
         to: userEmail.Email,
         subject: "Request Deleted",
         text: `Your request is Not approved by the Admin`, // plain text body
