@@ -55,7 +55,7 @@ module.exports = {
     } catch (error: any) {
       res.status(500).json(error);
     }
-  },
+  }, //edit profile
   approve: async (req: any, res: any) => {
     try {
       const id = req.params.id;
