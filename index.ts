@@ -22,8 +22,6 @@ require("./src/modals/login");
 
 require("./src/modals/request");
 require("./src/modals/client");
-require("./src/modals/report")
-
 
 require("./routes/client")(app);
 

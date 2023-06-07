@@ -22,7 +22,6 @@ app.all("/*", function (req, res, next) {
 require("./src/modals/login");
 require("./src/modals/request");
 require("./src/modals/client");
-require("./src/modals/report");
 require("./routes/client")(app);
 require("./routes/profile")(app);
 require("./routes/request")(app);

@@ -116,7 +116,7 @@ module.exports = {
         } = req.body;
 
         const updateClient = await client.findOneAndUpdate(
-          { _id: id },
+          { userId: id },
           {
             $set: {
               name,

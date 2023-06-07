@@ -82,7 +82,7 @@ module.exports = {
             const id = req.params.id;
             if (id) {
                 const { name, age, gender, contact, religion, city, language, experince, image, adress, maritialStatus, timing, service, qualification, skills, } = req.body;
-                const updateClient = yield client.findOneAndUpdate({ _id: id }, {
+                const updateClient = yield client.findOneAndUpdate({ userId: id }, {
                     $set: {
                         name,
                         age,
